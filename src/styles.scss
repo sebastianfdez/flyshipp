@@ -1,11 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+$fs-min-mobile: 550px;
+$fs-min-tablet: 950px;
+
+// Font awesome
+@import "./assets/fa/fontawesome.scss";
+@import "./assets/fa/solid.scss";
+@import "./assets/fa/brands.scss";
+@import "./assets/fa/_variables.scss";
+
+@import './assets/fs-general.scss';
+
+// Templates
+@import './assets/templates/home-page.scss';
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-$sf-min-mobile: 550px;
+footer {
+  max-height: 300px;
+  @media(min-width: $fs-min-tablet) {
+    min-height: 20vh;
+  }
+}
+
+a {
+  text-transform: none;
+  text-decoration: none;
+}
 
 .flex-div {
   display: flex;
@@ -16,6 +38,12 @@ $sf-min-mobile: 550px;
 
   &.column {
     flex-direction: column;
+  }
+
+  &.start {
+    align-items: flex-start;
+    place-items: flex-start;
+    place-content: flex-start;
   }
 }
 

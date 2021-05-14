@@ -1,0 +1,48 @@
+fs-footer {
+  padding: 20px;
+  font-size: 1rem;
+  color: #FFFFFF;
+  background-color: #000000;
+
+  .title {
+    font-size: 1.5rem;
+    @media(min-width: $fs-min-tablet) {
+      font-size: 2rem;
+    }
+  }
+
+  .info {
+    @media(min-width: $fs-min-tablet) {
+      width: 50%;
+      align-items: flex-start;
+      font-size: 1.5rem;
+    }
+    a {
+      margin-bottom: 5px;
+    }
+  }
+
+  .instagram, .mail {
+    &:before {
+      @extend %fa-icon;
+      margin-right: 5px;
+      font-size: 40px;
+      min-width: 40px;
+      margin-right: 20px;
+    }
+    color: #FFFFFF !important;
+  }
+
+  .instagram {
+    &:before {
+      @extend .fab;
+      content: fa-content($fa-var-instagram);
+    }
+  }
+  .mail {
+    &:before {
+      @extend .fa;
+      content: fa-content($fa-var-envelope);
+    }
+  }
+}
