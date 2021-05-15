@@ -1,15 +1,15 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
-/out-tsc
-/e2e
+/fs-webapp/dist
+/fs-webapp/tmp
+/fs-webapp/out-tsc
+/fs-webapp/e2e
 # Only exists if Bazel was run
 /bazel-out
 
 # dependencies
-/node_modules
+/fs-webapp/node_modules
 
 # profiling files
 chrome-profiler-events*.json
@@ -47,7 +47,7 @@ testem.log
 Thumbs.db
 
 # Firebase
-.firebase
-.firebaserc
-firebase.json
-firebase-keys.ts
+/fs-webapp/.firebase
+/fs-webapp/.firebaserc
+/fs-webapp/firebase.json
+/fs-webapp/firebase-keys.ts

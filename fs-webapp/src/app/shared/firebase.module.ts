@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { firebaseKeys } from '../../../firebase-keys';
 
@@ -7,6 +8,7 @@ import { firebaseKeys } from '../../../firebase-keys';
   imports: [
     AngularFireModule.initializeApp(firebaseKeys),
     AngularFireStorageModule,
+    AngularFireAnalyticsModule,
   ],
   exports: [
     AngularFireStorageModule,

@@ -28,7 +28,9 @@
             "aot": true,
             "assets": [
               "src/assets",
-              "src/assets/favicon.png"
+              "src/assets/favicon.png",
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.scss"
