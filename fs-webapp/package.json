@@ -5,9 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "npm run build -- --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy:prod": "npm run build:prod && firebase target:apply hosting flyshipp-prod flyshipp-4eab3 && firebase deploy --only hosting:flyshipp-prod",
+    "deploy:dev": "npm run build && firebase target:apply hosting flyshipp-dev flyshipp-dev && firebase deploy --only hosting:flyshipp-dev"
   },
   "private": true,
   "dependencies": {

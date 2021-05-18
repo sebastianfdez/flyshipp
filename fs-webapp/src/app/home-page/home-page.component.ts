@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 
 export class FSHomepageComponent {
-  imagePath = 'flyshipp.jpeg';
+  imagePath = 'flyshipp.png';
 
   constructor() { }
 }
