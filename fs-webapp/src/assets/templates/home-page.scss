@@ -1,5 +1,8 @@
+@import './homepage/menu-bar.scss';
+
 fs-homepage {
+  @extend .flex-div, .column, .full-height, .full-width;
   img {
-    max-width: 90vw;
+    max-width: 40vw;
   }
 }

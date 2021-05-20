@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FSHomepageComponent } from './home-page.component';
+import { FSMenuBarComponent } from './fs-menu-bar/fs-menu-bar.component';
+import { FsFooterComponent } from './fs-footer/fs-footer.component';
 
 @NgModule({
   imports: [
@@ -17,6 +19,8 @@ import { FSHomepageComponent } from './home-page.component';
   ],
   declarations: [
     FSHomepageComponent,
+    FSMenuBarComponent,
+    FsFooterComponent,
   ],
   providers: [],
 })
