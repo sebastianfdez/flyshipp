@@ -26,7 +26,7 @@ export class FSMenuBarComponent implements OnInit {
   }
 
   links = [
-    { title: 'Flyshipp SPA', fragment: 'home' },
+    { title: 'FlyShipp SPA', fragment: 'home' },
     { title: 'Quienes somos', fragment: 'presentation' },
     { title: 'Servicios', fragment: 'services' },
   ];
