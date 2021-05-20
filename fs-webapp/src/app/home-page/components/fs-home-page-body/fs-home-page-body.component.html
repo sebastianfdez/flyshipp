@@ -1,0 +1,33 @@
+
+<div class="full-width fs-section flex-div column px-5" [attr.id]="'home'"
+  #home>
+  <div class="flex-div column section-content">
+    <span class="section-title mb-2">Smart deliveries_</span>
+    <span class="section-subtitle">
+      _Somos Flyshipp, nos encargamos de hacer tus entregas de una manera eficiente y confiable.
+    </span>
+  </div>
+  <div class="flex-div column section-image">
+    <img [@appear]="showFirstImage ? 'show' : 'hidden'"
+      alt="Truck image"
+      src="../../../../assets/images/shipped.png">
+  </div>
+</div>
+<div class="container full-width fs-section column flex-div" [attr.id]="'presentation'"
+  #presentation>
+  <div class="flex-div column section-content">
+    <span class="section-title mb-2">_Nuestros shippers disponibles para ti</span>
+    <span class="section-subtitle">
+      Contamos con una red de shippers_ capaces de entregar un servicio de calidad y eficiente.
+    </span>
+  </div>
+  <div class="flex-div column section-image">
+    <img [@appear]="showFirstImage ? 'show' : 'hidden'"
+      alt="Shipper"
+      [src]="section2image | getDownloadURL">
+  </div>
+</div>
+<div class="container full-width fs-section flex-div" [attr.id]="'services'"
+  #services>
+  <img [src]="imagePath | getDownloadURL">
+</div>

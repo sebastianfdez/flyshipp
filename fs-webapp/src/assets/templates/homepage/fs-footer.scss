@@ -1,3 +1,10 @@
+footer {
+  max-height: 300px;
+  @include media-breakpoint-up(md) {
+    min-height: 20vh;
+  }
+}
+
 fs-footer {
   padding: 20px;
   font-size: 1rem;
@@ -6,19 +13,21 @@ fs-footer {
 
   .title {
     font-size: 1.5rem;
-    @media(min-width: $fs-min-tablet) {
+    @include media-breakpoint-up(md) {
       font-size: 2rem;
     }
   }
 
   .info {
-    @media(min-width: $fs-min-tablet) {
+    @include media-breakpoint-up(md) {
       width: 50%;
       align-items: flex-start;
       font-size: 1.5rem;
     }
     a {
       margin-bottom: 5px;
+      font-weight: lighter;
+      letter-spacing: 1px;
     }
   }
 

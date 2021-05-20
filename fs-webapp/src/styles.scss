@@ -1,27 +1,18 @@
 $fs-min-mobile: 550px;
 $fs-min-tablet: 950px;
 
-// Font awesome
-@import "./assets/fa/fontawesome.scss";
-@import "./assets/fa/solid.scss";
-@import "./assets/fa/brands.scss";
-@import "./assets/fa/_variables.scss";
-
-@import './assets/fs-general.scss';
-
-// Templates
-@import './assets/templates/home-page.scss';
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-footer {
-  max-height: 300px;
-  @media(min-width: $fs-min-tablet) {
-    min-height: 20vh;
-  }
 }
 
 a {
@@ -57,4 +48,19 @@ a {
 
 .fs-section {
   height: 100vh;
+
+  &:first-of-type {
+    padding-top: 76px;
+  }
 }
+
+// Font awesome
+@import "./assets/fa/fontawesome.scss";
+@import "./assets/fa/solid.scss";
+@import "./assets/fa/brands.scss";
+@import "./assets/fa/_variables.scss";
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+// Templates
+@import './assets/templates/home-page.scss';

@@ -1,8 +1,73 @@
 @import './homepage/menu-bar.scss';
+@import './homepage/fs-footer.scss';
+
+%title-small {
+  @media (min-width: 20em) {
+    color: red;
+  }
+}
 
 fs-homepage {
   @extend .flex-div, .column, .full-height, .full-width;
   img {
     max-width: 40vw;
+  }
+
+  .main-container {
+    height: fit-content;
+  }
+}
+
+fs-home-page-body {
+  .fs-section {
+    min-height: fit-content;
+    &:first-of-type {
+      background-image: url(../images/banner-bg.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @include media-breakpoint-up(md) {
+      &:nth-child(odd) {
+        flex-direction: row !important;
+      }
+      &:nth-child(even) {
+        flex-direction: row-reverse !important;
+      }
+    }
+  }
+
+
+  > div {
+    position: relative;
+  }
+
+  .section-content {
+    flex: 0 0 50%;
+    @include media-breakpoint-up(md) {
+      flex: 0 0 66%;
+    }
+    .section-title {
+      font-family: 'Krona One', sans-serif;
+      font-size: 2.5rem;
+      @include media-breakpoint-up(md) {
+        font-size: 3.5rem;
+      }
+    }
+    .section-subtitle {
+      font-size: 1.5rem;
+      @include media-breakpoint-up(md) {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .section-image {
+    flex: 0 0 50%;
+    img {
+      max-width: min(250px, 55vw);
+    }
+    @include media-breakpoint-up(md) {
+      flex: 0 0 33%;
+    }
   }
 }

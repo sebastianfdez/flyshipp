@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FSHomepageComponent } from './home-page.component';
-import { FSMenuBarComponent } from './fs-menu-bar/fs-menu-bar.component';
-import { FsFooterComponent } from './fs-footer/fs-footer.component';
+import { FSMenuBarComponent } from './components/fs-menu-bar/fs-menu-bar.component';
+import { FsFooterComponent } from './components/fs-footer/fs-footer.component';
+import { FSHomePageBodyComponent } from './components/fs-home-page-body/fs-home-page-body.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { FsFooterComponent } from './fs-footer/fs-footer.component';
     FSHomepageComponent,
     FSMenuBarComponent,
     FsFooterComponent,
+    FSHomePageBodyComponent,
   ],
   providers: [],
 })

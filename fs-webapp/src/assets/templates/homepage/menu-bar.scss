@@ -1,10 +1,24 @@
 fs-menu-bar {
   @extend .flex-div, .full-width;
   flex: 0 0 auto;
+  position: fixed;
+  top: 0;
+  background-color: #f8f9fab3;
+  z-index: 2;
+  min-height: 76px;
 
   .navbar-brand {
+    position: absolute;
     img {
       margin: 0 20px;
     }
-  } 
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .nav-link.active {
+    font-family: 'Krona One', sans-serif;
+  }
 }
