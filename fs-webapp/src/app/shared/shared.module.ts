@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { FirebaseModule } from './firebase.module';
 import { NgbCollapseModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -10,6 +11,8 @@ import { NgbCollapseModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
     FirebaseModule,
     NgbNavModule,
     NgbCollapseModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     ApiService,
@@ -18,6 +21,8 @@ import { NgbCollapseModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
     FirebaseModule,
     NgbNavModule,
     NgbCollapseModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule { }

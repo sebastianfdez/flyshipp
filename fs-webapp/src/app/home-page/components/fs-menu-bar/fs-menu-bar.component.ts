@@ -28,6 +28,7 @@ export class FSMenuBarComponent implements OnInit {
   links = [
     { title: 'FlyShipp SPA', fragment: 'home' },
     { title: 'Quienes somos', fragment: 'presentation' },
+    { title: 'Trabaja con nosotros', fragment: 'workWithUs' },
     { title: 'Servicios', fragment: 'services' },
   ];
 

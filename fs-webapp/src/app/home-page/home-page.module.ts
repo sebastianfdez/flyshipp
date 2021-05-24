@@ -6,6 +6,7 @@ import { FSHomepageComponent } from './home-page.component';
 import { FSMenuBarComponent } from './components/fs-menu-bar/fs-menu-bar.component';
 import { FsFooterComponent } from './components/fs-footer/fs-footer.component';
 import { FSHomePageBodyComponent } from './components/fs-home-page-body/fs-home-page-body.component';
+import { FSShipperFormComponent } from './components/fs-shipper-form/fs-shipper-form.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { FSHomePageBodyComponent } from './components/fs-home-page-body/fs-home-
     FSMenuBarComponent,
     FsFooterComponent,
     FSHomePageBodyComponent,
+    FSShipperFormComponent,
   ],
   providers: [],
 })

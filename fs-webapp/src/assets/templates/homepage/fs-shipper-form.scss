@@ -1,0 +1,10 @@
+fs-shipper-form {
+  @include media-breakpoint-up(lg) {
+    padding: 0 4rem;
+  }
+  > div {
+    padding: 15px;
+    background-color: #cccccc;
+    border-radius: 8px;
+  }
+}

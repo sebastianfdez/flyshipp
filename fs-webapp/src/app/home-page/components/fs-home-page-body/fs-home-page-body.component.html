@@ -1,5 +1,6 @@
 
-<div class="full-width fs-section flex-div column px-5" [attr.id]="'home'"
+<div class="full-width fs-section flex-div column px-5"
+[attr.id]="'home'"
   #home>
   <div class="flex-div column section-content">
     <span class="section-title mb-2">Smart deliveries_</span>
@@ -13,18 +14,32 @@
       src="../../../../assets/images/shipped.png">
   </div>
 </div>
-<div class="container full-width fs-section column flex-div" [attr.id]="'presentation'"
+<div class="full-width fs-section column flex-div"
+[attr.id]="'presentation'"
   #presentation>
   <div class="flex-div column section-content">
-    <span class="section-title mb-2">_Nuestros shippers disponibles para ti</span>
+    <span class="section-title mb-2">_Quienes somos?</span>
     <span class="section-subtitle">
-      Contamos con una red de shippers_ capaces de entregar un servicio de calidad y eficiente.
+      Somos una red de deliveries que cuenta con una red de shippers_ capaces de entregar un servicio de calidad y eficiente.
     </span>
   </div>
   <div class="flex-div column section-image">
     <img [@appear]="showFirstImage ? 'show' : 'hidden'"
       alt="Shipper"
       [src]="section2image | getDownloadURL">
+  </div>
+</div>
+<div class="container full-width fs-section column flex-div background"
+[attr.id]="'workWithUs'"
+  #workWithUs>
+  <div class="flex-div column section-content">
+    <span class="section-title mb-2">Buscamos shippers_</span>
+    <span class="section-subtitle">
+      _rellena este formulario para poder entrar en contacto con nosotros! 
+    </span>
+  </div>
+  <div class="flex-div column section-content full-width">
+    <fs-shipper-form class="full-width"></fs-shipper-form>
   </div>
 </div>
 <div class="container full-width fs-section flex-div" [attr.id]="'services'"

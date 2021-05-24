@@ -3,12 +3,21 @@ fs-menu-bar {
   flex: 0 0 auto;
   position: fixed;
   top: 0;
-  background-color: #f8f9fab3;
   z-index: 2;
   min-height: 76px;
 
+  nav.navbar {
+    min-height: 76px;
+    background-color: #f8f9fa;
+    @include media-breakpoint-up(lg) {
+      background-color: #f8f9fab3;
+    }
+  }
+
   .navbar-brand {
-    position: absolute;
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+    }
     img {
       margin: 0 20px;
     }

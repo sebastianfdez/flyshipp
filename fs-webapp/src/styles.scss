@@ -47,7 +47,8 @@ a {
 }
 
 .fs-section {
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
 
   &:first-of-type {
     padding-top: 76px;
