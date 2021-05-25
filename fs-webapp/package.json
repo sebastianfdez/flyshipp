@@ -9,8 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy:prod": "npm run build:prod && firebase target:apply hosting flyshipp-prod flyshipp-4eab3 && firebase deploy --only hosting:flyshipp-prod",
-    "deploy:dev": "npm run build && firebase target:apply hosting flyshipp-dev flyshipp-dev && firebase deploy --only hosting:flyshipp-dev"
+    "deploy:prod": "npm run build:prod && firebase use --add flyshipp-4eab3 && firebase target:apply hosting flyshipp-prod flyshipp-4eab3 && firebase deploy --only hosting:flyshipp-prod",
+    "deploy:dev": "npm run build && firebase use --add flyshipp-dev && firebase target:apply hosting flyshipp-dev flyshipp-dev && firebase deploy --only hosting:flyshipp-dev",
+    "deploy-func:dev": "firebase use --add flyshipp-dev && firebase target:apply hosting flyshipp-dev flyshipp-dev && firebase deploy --only functions"
   },
   "private": true,
   "dependencies": {
