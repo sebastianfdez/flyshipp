@@ -7,4 +7,62 @@ fs-shipper-form {
     background-color: #cccccc;
     border-radius: 8px;
   }
+
+  .submit-button {
+    min-height: 38px;
+    min-width: 120px;
+    overflow: hidden; 
+    span {
+      line-height: 1rem;
+    }
+    .check,
+    .error,
+    .spinner-border {
+      display: none;
+    }
+    &.is-loading {
+      .submit {
+        display: none;
+      }
+      .spinner-border {
+        display: block;
+      }
+    }
+    &.success {
+      @extend .btn-success;
+      .submit {
+        display: none;
+      }
+      .check {
+        display: block !important;
+        font-size: 24px;
+        animation: scale 0.5s linear;
+        i {
+          transform-origin: center center;
+        }
+      }
+    }
+    &.error {
+      @extend .btn-danger;
+      .submit {
+        display: none;
+      }
+      .error {
+        display: block !important;
+        font-size: 24px;
+        animation: scale 0.5s linear;
+        i {
+          transform-origin: center center;
+        }
+      }
+    }
+  }
+
+  @keyframes scale {
+    0%   { transform: scale(10); }
+    50%  { transform: scale(0.2); }
+    70%  { transform: scale(1.2); }
+    90%  { transform: scale(0.7); }
+    100% { transform: scale(1); }
+  }
 }

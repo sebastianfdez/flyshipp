@@ -4,6 +4,7 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { firebaseKeysProd, firebaseKeysDev } from '../../../firebase-keys';
 import { environment } from '../../environments/environment';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   imports: [
@@ -13,6 +14,9 @@ import { environment } from '../../environments/environment';
   ],
   exports: [
     AngularFireStorageModule,
+  ],
+  providers: [
+    FirebaseService,
   ],
 })
 export class FirebaseModule { }

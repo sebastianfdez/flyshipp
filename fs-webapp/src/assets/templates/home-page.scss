@@ -9,6 +9,9 @@
 }
 
 fs-homepage {
+  .scroll-cont {
+    place-content: start;
+  }
   @extend .flex-div, .column, .full-height, .full-width;
   img {
     max-width: 70vw;

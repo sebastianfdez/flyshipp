@@ -21,7 +21,7 @@ a {
 }
 
 .flex-div {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
   align-items: center;
   place-items: center;
@@ -62,6 +62,7 @@ a {
 @import "./assets/fa/_variables.scss";
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import './assets/mat-override.scss';
 
 // Templates
 @import './assets/templates/home-page.scss';
