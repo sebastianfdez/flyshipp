@@ -17,10 +17,10 @@ export class FSShipperFormComponent implements OnInit {
   submitError = false;
 
   shipperForm = this.fb.group({
-    firstName: ['sebastian', [Validators.required]],
-    lastName: ['fernandez', [Validators.required]],
-    mail: ['sfernandez@uc.cl', [Validators.required]],
-    number: ['12345', [Validators.required]],
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
+    mail: ['', [Validators.required]],
+    number: ['', [Validators.required]],
   });
 
   constructor(

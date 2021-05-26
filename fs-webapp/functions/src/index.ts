@@ -1,9 +1,7 @@
 import * as functions from "firebase-functions";
-import * as admin from "firebase-admin";
 import * as cors from "cors";
 import {transporter} from "./mail-keys";
 import Mail = require("nodemailer/lib/mailer");
-admin.initializeApp();
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
