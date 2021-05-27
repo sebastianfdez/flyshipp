@@ -19,7 +19,7 @@ export class FSMenuBarComponent implements OnInit {
     const parentOffset = event.target.scrollingElement.offsetTop;
     this.children?.forEach((element) => {
       const element_: HTMLElement = element as HTMLElement;
-      if ((element_.offsetTop - parentOffset) <= scrollTop) {
+      if ((element_.offsetTop - parentOffset - 100) <= scrollTop) {
         this.currentSection = element_.id;
       }
     });
@@ -29,7 +29,8 @@ export class FSMenuBarComponent implements OnInit {
     { title: 'FlyShipp SPA', fragment: 'home' },
     { title: 'Quienes somos', fragment: 'presentation' },
     { title: 'Trabaja con nosotros', fragment: 'workWithUs' },
-    { title: 'Contactos', fragment: 'services' },
+    { title: 'Sigue tu pedido', fragment: 'tracking' },
+    { title: 'Contáctanos', fragment: 'services' },
   ];
 
   constructor() { }

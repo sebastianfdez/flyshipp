@@ -53,6 +53,10 @@ a {
   &:first-of-type {
     padding-top: 76px;
   }
+
+  &:last-of-type {
+    min-height: 80vh;
+  }
 }
 
 // Font awesome

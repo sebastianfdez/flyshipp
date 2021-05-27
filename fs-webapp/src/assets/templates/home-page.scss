@@ -85,6 +85,33 @@ fs-home-page-body {
         font-size: 2.5rem;
       }
     }
+    #beetrack_widget {
+      div.widget {
+        form {
+          div.logo {
+            span {
+              color: #FFFFFF !important;
+            }
+          }
+          div.form-input {
+            input.text_input {
+              padding-bottom: 10px !important;
+              margin-bottom: 5px !important;
+            }
+          }
+          div.form-footer {
+            display: flex !important;
+            align-items: center;
+            place-content: flex-start;
+            color: #FFFFFF !important;
+            margin-bottom: 5px !important;
+            span.text-footer {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 
   .section-image {
