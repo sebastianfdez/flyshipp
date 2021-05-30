@@ -1,27 +1,18 @@
 $fs-min-mobile: 550px;
 $fs-min-tablet: 950px;
 
-// Font awesome
-@import "./assets/fa/fontawesome.scss";
-@import "./assets/fa/solid.scss";
-@import "./assets/fa/brands.scss";
-@import "./assets/fa/_variables.scss";
-
-@import './assets/fs-general.scss';
-
-// Templates
-@import './assets/templates/home-page.scss';
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-footer {
-  max-height: 300px;
-  @media(min-width: $fs-min-tablet) {
-    min-height: 20vh;
-  }
 }
 
 a {
@@ -30,7 +21,7 @@ a {
 }
 
 .flex-div {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
   align-items: center;
   place-items: center;
@@ -56,5 +47,26 @@ a {
 }
 
 .fs-section {
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
+
+  &:first-of-type {
+    padding-top: 76px;
+  }
+
+  &:last-of-type {
+    min-height: 80vh;
+  }
 }
+
+// Font awesome
+@import "./assets/fa/fontawesome.scss";
+@import "./assets/fa/solid.scss";
+@import "./assets/fa/brands.scss";
+@import "./assets/fa/_variables.scss";
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import './assets/mat-override.scss';
+
+// Templates
+@import './assets/templates/home-page.scss';

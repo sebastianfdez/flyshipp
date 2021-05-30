@@ -6,8 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class FSHomepageComponent {
-  imagePath = 'flyshipp.png';
-
-  constructor() { }
-}
+export class FSHomepageComponent {}

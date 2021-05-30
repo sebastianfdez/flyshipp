@@ -1,0 +1,64 @@
+
+<div class="full-width fs-section flex-div column px-5"
+[attr.id]="'home'"
+  #home>
+  <div class="flex-div column section-content">
+    <span class="section-title mb-2">Smart deliveries_</span>
+    <span class="section-subtitle">
+      _Somos Flyshipp, nos encargamos de hacer tus entregas de una manera eficiente y confiable.
+    </span>
+  </div>
+  <div class="flex-div column section-image">
+    <img [@appear]="showFirstImage ? 'show' : 'hidden'"
+      alt="Truck image"
+      src="../../../../assets/images/shipped.png">
+  </div>
+</div>
+<div class="full-width fs-section column flex-div"
+[attr.id]="'presentation'"
+  #presentation>
+  <div class="flex-div column section-content">
+    <span class="section-title mb-2">_Quienes somos?</span>
+    <span class="section-subtitle">
+      _Somos una empresa de delivery que cuenta con una red de shippers capaces de entregar un servicio de calidad y eficiente,
+      a través de la última tecnología que ayuda a simplificar rutas minimizando los costos y tiempos de entrega.
+    </span>
+  </div>
+  <div class="flex-div column section-image">
+    <img [@appear]="showFirstImage ? 'show' : 'hidden'"
+      alt="Shipper"
+      [src]="section2image | getDownloadURL">
+  </div>
+</div>
+<div class="container full-width fs-section column flex-div background"
+[attr.id]="'workWithUs'"
+  #workWithUs>
+  <div class="flex-div column section-content">
+    <span class="section-title mb-2">Buscamos shippers_</span>
+    <span class="section-subtitle">
+      _rellena este formulario para poder entrar en contacto con nosotros! 
+    </span>
+  </div>
+  <div class="flex-div column section-content full-width">
+    <fs-shipper-form class="full-width"></fs-shipper-form>
+  </div>
+</div>
+<div class="container full-width fs-section column flex-div"
+[attr.id]="'tracking'"
+  #workWithUs>
+  <div class="flex-div column section-content full-width">
+    <div id="beetrack_widget"
+      lang="es" api-key="OZXAlT5duRzn-w843jy0xg"
+      class="widget m-4"></div>
+  </div>
+  <div class="flex-div column section-content">
+    <span class="section-title mb-2">Sigue tu pedido</span>
+    <span class="section-subtitle">
+      Ingresa tu codigo FlyShipp_ para poder rastrear tu pedido en directo 
+    </span>
+  </div>
+</div>
+<div class="container full-width fs-section flex-div" [attr.id]="'services'"
+  #services>
+  <img [src]="imagePath | getDownloadURL">
+</div>

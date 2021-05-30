@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light navbar-expand-lg full-width">
+  <a class="navbar-brand flex-div" href="#" alt="Logo flyshipp">
+    <img [src]="imagePath | getDownloadURL" height="50" class="d-inline-block align-top" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+    data-target="#navbarsDefault" aria-controls="navbarsDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isNavbarCollapsed"
+    class="collapse navbar-collapse justify-content-center align-items-center"
+    id="navbarsDefault">
+    <ul class="navbar-nav justify-content-center align-items-center"
+      ngbNav [activeId]="currentSection">
+  
+      <li [ngbNavItem]="link.fragment" *ngFor="let link of links"
+        (click)="onNavSelected(link.fragment)">
+        <a ngbNavLink routerLink=".">
+          {{ link.title }}
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
