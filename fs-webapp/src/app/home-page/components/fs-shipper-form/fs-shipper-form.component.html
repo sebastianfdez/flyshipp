@@ -1,15 +1,17 @@
 <div [formGroup]="shipperForm" class="flex-div column">
   <div class="form-group full-width">
     <label for="firstName">Nombre</label>
-    <input type="email" class="form-control"
-    [class.is-invalid]="shipperForm.get('firstName')?.invalid && shipperForm.get('firstName')?.touched"
+    <input class="form-control"
+      aria-required="true"
+      [class.is-invalid]="shipperForm.get('firstName')?.invalid && shipperForm.get('firstName')?.touched"
       id="firstName" placeholder="Tu nombre (ej: Juan)"
       formControlName="firstName"
     >
   </div>
   <div class="form-group full-width">
     <label for="lastName">Apellido</label>
-    <input type="email" class="form-control"
+    <input class="form-control"
+      aria-required="true"
       [class.is-invalid]="shipperForm.get('lastName')?.invalid && shipperForm.get('lastName')?.touched"
       id="lastName" placeholder="Tu apellido (ej: Perez)"
       formControlName="lastName"
@@ -18,6 +20,7 @@
   <div class="form-group full-width">
     <label for="mail">Correo electrónico</label>
     <input type="email" class="form-control"
+      aria-required="true"
       [class.is-invalid]="shipperForm.get('mail')?.invalid && shipperForm.get('mail')?.touched"
       id="mail" aria-describedby="emailHelp" placeholder="Tu mail (ex: jperez@gmail.com)"
       formControlName="mail" email
@@ -25,17 +28,22 @@
     <small id="emailHelp" class="form-text text-muted">Tranquil@, no te enviaremos publicidad.</small>
   </div>
   <div class="form-group full-width">
-    <label for="inputName">Teléfono</label>
-    <input type="number" class="form-control"
+    <label for="inputPhone">Teléfono</label>
+    <input class="form-control"
+      aria-required="true"
       [class.is-invalid]="shipperForm.get('number')?.invalid && shipperForm.get('number')?.touched"
-      id="inputName" placeholder="Tu teléfono (ex: +56999999999)"
+      id="inputPhone" placeholder="Tu teléfono (ex: +56999999999)"
       formControlName="number"
     >
     <div class="invalid-feedback">
       Por favor, inserte un número de teléfono válido.
     </div>
   </div>
-  <button class="submit-button btn btn-primary flex-div" type="submit"
+  <div class="g-recaptcha" id="recaptcha-container"
+    [attr.data-sitekey]="recaptchaKey"
+    data-callback="recaptchaCallback"
+  ></div>
+  <button class="mt-2 submit-button btn btn-primary flex-div" type="submit"
     [disabled]="shipperForm.invalid || submitSuccess || submitError"
     [class.disabled]="shipperForm.invalid || submitSuccess || submitError"
     [class.is-loading]="loadingSubmit"

@@ -43,11 +43,21 @@ exports.sendMail = functions.firestore
               </p>
               <br />
               <p style="font-size: 16px;">
-                Nombre: ${shipper.name || ""}  <br>
-                Apellido: ${shipper.lastName || ""} <br>
-                Mail: ${shipper.mail || ""}  <br>
-                Telefono: ${shipper.number || ""} <br>
-                </p>
+                Nombre: ${shipper.name || ""}
+              </p>
+              <br>
+              <p style="font-size: 16px;">
+                Apellido: ${shipper.lastName || ""}
+              </p>
+              <br>
+              <p style="font-size: 16px;">
+                Mail: ${shipper.mail || ""}
+              </p>
+              <br>
+              <p style="font-size: 16px;">
+                Telefono: ${shipper.number || ""}
+              </p>
+              <br>
               <img style="max-width: 500px;"
               src="https://firebasestorage.googleapis.com/v0/b/flyshipp-4eab3.appspot.com/o/flyshipp.png?alt=media&token=a6b1c7e2-07a0-4f85-b5c1-c804172529c4" />
             `,
