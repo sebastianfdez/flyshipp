@@ -5,6 +5,7 @@ import { ContactShipper } from '../../models/contact-shipper';
 import { catchError, delay, take } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { SnackBarService } from '../../../shared/services/snack-bar.service';
+import { recaptchaKey } from './recaptcha-key';
 
 @Component({
   selector: 'fs-shipper-form',
@@ -16,12 +17,16 @@ export class FSShipperFormComponent implements OnInit {
   submitSuccess = false;
   submitError = false;
 
+  recaptchaKey = recaptchaKey;
+
   shipperForm = this.fb.group({
     firstName: ['', [Validators.required]],
     lastName: ['', [Validators.required]],
     mail: ['', [Validators.required]],
     number: ['', [Validators.required]],
     rut: ['', Validators.required],
+    
+    checked: [null, [Validators.required]],
   });
 
   constructor(
@@ -29,21 +34,37 @@ export class FSShipperFormComponent implements OnInit {
     private firebaseService: FirebaseService,
     private snackbarService: SnackBarService,
     private cdr: ChangeDetectorRef,
-  ) { }
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    // Make recaptchaCallback a global variable
+    (window as any).recaptchaCallback = this.recaptchaCallback.bind(this);
+  }
 
-  submitForm(event: Event) {
-    event.preventDefault();
-    this.loadingSubmit = true;
-    this.submitError = false;
-    this.submitSuccess = false;
-    const shipper: ContactShipper = {
+  getShipperValues(): ContactShipper {
+    return {
       name: this.shipperForm.value.firstName,
       lastName: this.shipperForm.value.lastName,
       mail: this.shipperForm.value.mail,
       number: this.shipperForm.value.number,
     };
+  }
+
+  recaptchaCallback(): void {
+    this.shipperForm.get('checked')?.setValue('checked');
+    this.cdr.detectChanges();
+  }
+
+  submitForm(event: Event) {
+    event.preventDefault();
+    if (this.shipperForm.invalid) {
+      // Prevent manually enable the button
+      return;
+    }
+    this.loadingSubmit = true;
+    this.submitError = false;
+    this.submitSuccess = false;
+    const shipper: ContactShipper = this.getShipperValues();
     this.firebaseService.addToCollection<ContactShipper>(shipper, 'contact-shippers').pipe(
       catchError((error) => {
         console.log(error);

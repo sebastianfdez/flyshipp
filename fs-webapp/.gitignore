@@ -46,6 +46,9 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Captach keys
+/recaptcha-key.ts
+
 # Firebase
 /.firebase
 /.firebaserc
