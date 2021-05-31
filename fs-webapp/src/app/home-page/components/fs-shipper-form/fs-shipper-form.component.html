@@ -16,6 +16,17 @@
     >
   </div>
   <div class="form-group full-width">
+    <label for="inputName">RUT</label>
+    <input type="rut" class="form-control"
+      [class.is-invalid]="shipperForm.get('rut')?.invalid && shipperForm.get('rut')?.touched"
+      id="inputName" placeholder="Tu RUT (ex: 12345678-9)"
+      formControlName="rut"
+    >
+    <div class="invalid-feedback">
+      Por favor, inserte un RUT válido.
+    </div>
+  </div>
+  <div class="form-group full-width">
     <label for="mail">Correo electrónico</label>
     <input type="email" class="form-control"
       [class.is-invalid]="shipperForm.get('mail')?.invalid && shipperForm.get('mail')?.touched"

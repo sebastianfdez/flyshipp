@@ -21,6 +21,7 @@ export class FSShipperFormComponent implements OnInit {
     lastName: ['', [Validators.required]],
     mail: ['', [Validators.required]],
     number: ['', [Validators.required]],
+    rut: ['', Validators.required],
   });
 
   constructor(

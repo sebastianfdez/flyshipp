@@ -45,6 +45,7 @@ exports.sendMail = functions.firestore
               <p style="font-size: 16px;">
                 Nombre: ${shipper.name || ""}  <br>
                 Apellido: ${shipper.lastName || ""} <br>
+                Rut: ${shipper.rut || ""} <br>
                 Mail: ${shipper.mail || ""}  <br>
                 Telefono: ${shipper.number || ""} <br>
                 </p>
