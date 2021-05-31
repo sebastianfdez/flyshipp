@@ -5,7 +5,7 @@ import { ContactShipper } from '../../models/contact-shipper';
 import { catchError, delay, take } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { SnackBarService } from '../../../shared/services/snack-bar.service';
-import { recaptchaKey } from './recaptcha-key';
+import { recaptchaKey } from '../../../../../recaptcha-key';
 
 @Component({
   selector: 'fs-shipper-form',
@@ -45,6 +45,7 @@ export class FSShipperFormComponent implements OnInit {
     return {
       name: this.shipperForm.value.firstName,
       lastName: this.shipperForm.value.lastName,
+      rut: this.shipperForm.value.rut,
       mail: this.shipperForm.value.mail,
       number: this.shipperForm.value.number,
     };
