@@ -51,7 +51,5 @@ Thumbs.db
 
 # Firebase
 /.firebase
-/.firebaserc
-/firebase.json
 /firebase-keys.ts
 /firebase-debug.log
