@@ -27,6 +27,7 @@ jobs:
           args: target:apply hosting flyshipp-dev flyshipp-dev
         env:
           FIREBASE_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          PROJECT_PATH: ./fs-webapp
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
