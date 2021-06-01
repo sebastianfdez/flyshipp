@@ -16,7 +16,7 @@ jobs:
           cat fs-webapp/recaptcha-key.ts
       - name: Build
         uses: actions/checkout@v2
-        run: 'cd fs-webapp && npm ci && npm run build'
+      - run: 'cd fs-webapp && npm ci && npm run build'
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
