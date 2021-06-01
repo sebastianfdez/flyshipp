@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       RECAPTCHAKEY: ${{ secrets.RECAPTCHAKEY }}
+      FIREBASE_KEYS: ${{ secrets.FIREBASE_KEYS }}
     steps:
       - uses: actions/checkout@v2
       - name: Set env varibles
@@ -15,6 +16,9 @@ jobs:
           touch fs-webapp/recaptcha-key.ts
           echo "export const recaptchaKey = '${RECAPTCHAKEY}';" >> fs-webapp/recaptcha-key.ts
           cat fs-webapp/recaptcha-key.ts
+          touch fs-webapp/firebase-keys.ts
+          echo "${FIREBASE_KEYS}"" >> fs-webapp/firebase-keys.ts
+          cat fs-webapp/firebase-keys.ts
       - name: Build
         run: 'cd fs-webapp && npm ci && npm run build'
       - name: Deploy
