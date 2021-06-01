@@ -21,20 +21,6 @@ jobs:
           cat fs-webapp/firebase-keys.ts
       - name: Build
         run: 'cd fs-webapp && npm ci && npm run build'
-      - name: Add target
-        uses: w9jds/firebase-action@master
-        with:
-          args: use --add flyshipp-dev
-        env:
-          FIREBASE_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-          PROJECT_PATH: ./fs-webapp
-      - name: Apply target
-        uses: w9jds/firebase-action@master
-        with:
-          args: target:apply hosting flyshipp-dev flyshipp-dev
-        env:
-          FIREBASE_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-          PROJECT_PATH: ./fs-webapp
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
