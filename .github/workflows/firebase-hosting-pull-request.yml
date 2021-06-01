@@ -6,10 +6,17 @@ name: Deploy to Firebase Hosting on PR
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest
+    env:
+      RECAPTCHAKEY: ${{ secrets.RECAPTCHAKEY }}
     steps:
-      - uses: actions/checkout@v2
-      - run: 'cd fs-webapp && npm ci && npm run build'
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Set env varibles
+        run: touch fs-webapp/recaptcha-key.ts
+        run: echo "export const recaptchaKey = '$RECAPTCHAKEY';" >> fs-webapp/recaptcha-key.ts
+        run: cat fs-webapp/recaptcha-key.ts
+      - name: Build
+        uses: actions/checkout@v2
+        run: 'cd fs-webapp && npm ci && npm run build'
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLYSHIPP_DEV }}'
