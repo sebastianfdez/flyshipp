@@ -28,6 +28,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FLYSHIPP_DEV }}'
           projectId: flyshipp-dev
           target: flyshipp-dev
+          args: target:apply hosting flyshipp-dev flyshipp-dev
           entryPoint: ./fs-webapp
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
