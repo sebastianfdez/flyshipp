@@ -10,12 +10,14 @@ jobs:
       RECAPTCHAKEY: ${{ secrets.RECAPTCHAKEY }}
     steps:
       - name: Set env varibles
-        run: touch fs-webapp/recaptcha-key.ts
-        run: echo "export const recaptchaKey = '$RECAPTCHAKEY';" >> fs-webapp/recaptcha-key.ts
-        run: cat fs-webapp/recaptcha-key.ts
+        run: |
+          touch fs-webapp/recaptcha-key.ts
+          echo "export const recaptchaKey = '${RECAPTCHAKEY}';" >> fs-webapp/recaptcha-key.ts
+          cat fs-webapp/recaptcha-key.ts
       - name: Build
         uses: actions/checkout@v2
         run: 'cd fs-webapp && npm ci && npm run build'
+      - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
