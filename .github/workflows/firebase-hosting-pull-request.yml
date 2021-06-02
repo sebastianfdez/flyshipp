@@ -19,6 +19,8 @@ jobs:
           touch fs-webapp/firebase-keys.ts
           echo "${FIREBASE_KEYS}" >> fs-webapp/firebase-keys.ts
           cat fs-webapp/firebase-keys.ts
+      - name: Install Dependencies
+        run: 'cd fs-webapp && npm install'
       - name: Build
         run: 'cd fs-webapp && npm ci && npm run build'
       - name: Deploy
