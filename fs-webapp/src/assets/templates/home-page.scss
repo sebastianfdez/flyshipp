@@ -1,5 +1,127 @@
+@import './homepage/menu-bar.scss';
+@import './homepage/fs-footer.scss';
+@import './homepage/fs-shipper-form.scss';
+
+%title-small {
+  @media (min-width: 20em) {
+    color: red;
+  }
+}
+
 fs-homepage {
+  .scroll-cont {
+    place-content: start;
+  }
+  @extend .flex-div, .column, .full-height, .full-width;
   img {
-    max-width: 90vw;
+    max-width: 70vw;
+    @include media-breakpoint-up(md) {
+      max-width: 40vw;
+    }
+  }
+
+  .main-container {
+    height: fit-content;
+  }
+}
+
+fs-home-page-body {
+  .fs-section {
+    padding: 15px;
+    &:first-of-type {
+      background-image: url(../images/banner-bg.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &.background {
+      background: linear-gradient( 
+        135deg,
+        rgba(0, 136, 232, 1) 0%,
+        rgba(0, 182, 198, 1) 0%,
+        rgba(0, 136, 232, 1) 100%,
+      );
+      max-width: 100%;
+      padding: 3vh 5vw;
+      min-height: 80vh;
+      margin-top: 10vh;
+      .section-content {
+        .section-title, .section-subtitle {
+          color: #FFFFFF;
+        }
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      &:nth-child(odd) {
+        flex-direction: row !important;
+      }
+      &:nth-child(even) {
+        flex-direction: row-reverse !important;
+      }
+    }
+  }
+
+
+  > div {
+    position: relative;
+  }
+
+  .section-content {
+    flex: 0 0 50%;
+    padding: 10px 0;
+    @include media-breakpoint-up(lg) {
+      flex: 1;
+    }
+    .section-title {
+      font-family: 'Krona One', sans-serif;
+      font-size: 2.2rem;
+      text-align: center;
+      @include media-breakpoint-up(md) {
+        font-size: 3.5rem;
+      }
+    }
+    .section-subtitle {
+      font-size: 1.5rem;
+      @include media-breakpoint-up(md) {
+        font-size: 2.5rem;
+      }
+    }
+    #beetrack_widget {
+      div.widget {
+        form {
+          div.logo {
+            span {
+              color: #FFFFFF !important;
+            }
+          }
+          div.form-input {
+            input.text_input {
+              padding-bottom: 10px !important;
+              margin-bottom: 5px !important;
+            }
+          }
+          div.form-footer {
+            display: flex !important;
+            align-items: center;
+            place-content: flex-start;
+            color: #FFFFFF !important;
+            margin-bottom: 5px !important;
+            span.text-footer {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section-image {
+    flex: 0 0 50%;
+    padding: 10px 0;
+    img {
+      max-width: min(250px, 55vw);
+    }
+    @include media-breakpoint-up(lg) {
+      flex: 0 0 33%;
+    }
   }
 }

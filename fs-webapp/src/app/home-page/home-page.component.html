@@ -1,3 +1,14 @@
-<div class="flex-div column full-height full-width">
-  <img [src]="imagePath | getDownloadURL">
+<div class="scroll-cont flex-div column full-height full-width">
+  <fs-menu-bar></fs-menu-bar>
+  <div class="main-container full-width full-height flex-div">
+    <div role="main" class="full-width" style="position: relative; min-height: 200px">
+      <div class="flex-div column full-height full-width">
+        <fs-home-page-body class="full-width"></fs-home-page-body>
+      </div>
+    </div>
+  </div>
+
+  <footer class="full-width flex-div">
+    <fs-footer class="full-width flex-div full-height"></fs-footer>
+  </footer>
 </div>

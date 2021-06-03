@@ -1,0 +1,26 @@
+{
+  "projects": {
+    "flyshipp-prod": "flyshipp-4eab3",
+    "flyshipp-dev": "flyshipp-dev",
+    "default": "flyshipp-dev"
+  },
+  "targets": {
+    "flyshipp-4eab3": {
+      "hosting": {
+        "flyshipp-prod": [
+          "flyshipp-4eab3"
+        ]
+      }
+    },
+    "flyshipp-dev": {
+      "hosting": {
+        "flyshipp-prod": [
+          "flyshipp-4eab3"
+        ],
+        "flyshipp-dev": [
+          "flyshipp-dev"
+        ]
+      }
+    }
+  }
+}

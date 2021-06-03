@@ -1,24 +1,53 @@
+footer {
+  max-height: 300px;
+  @include media-breakpoint-up(md) {
+    min-height: 20vh;
+  }
+}
+
 fs-footer {
+  outline: none;
   padding: 20px;
   font-size: 1rem;
   color: #FFFFFF;
   background-color: #000000;
 
+  .blocks {
+    @include media-breakpoint-up(md) {
+      flex-direction: row !important;
+    }
+  }
+
+  a:hover, a:focus {
+    text-decoration: none !important;
+  }
+
   .title {
+    font-family: 'Krona One', sans-serif;
     font-size: 1.5rem;
-    @media(min-width: $fs-min-tablet) {
+    @include media-breakpoint-up(md) {
       font-size: 2rem;
     }
   }
 
+  .subtitle {
+    font-family: 'Krona One', sans-serif;
+    font-size: 1.1rem;
+    @include media-breakpoint-up(md) {
+      font-size: 1.4rem;
+    }
+  }
+
   .info {
-    @media(min-width: $fs-min-tablet) {
+    @include media-breakpoint-up(md) {
       width: 50%;
       align-items: flex-start;
       font-size: 1.5rem;
     }
     a {
       margin-bottom: 5px;
+      font-weight: lighter;
+      letter-spacing: 1px;
     }
   }
 
