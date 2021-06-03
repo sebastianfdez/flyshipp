@@ -25,7 +25,7 @@ jobs:
       - name: Install Dependencies
         run: 'cd fs-webapp && npm install'
       - name: Build
-        run: 'cd fs-webapp && npm cache clean && npm ci && npm run build:prod'
+        run: 'cd fs-webapp && npm cache clean --force && npm ci && npm run build:prod'
       - name: Deploy
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
